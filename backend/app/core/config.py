@@ -11,7 +11,6 @@ class Settings(BaseSettings):
 
     APP_ENV: str = "development"
     SECRET_KEY: str = "dev-secret-key"
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
 
     # Whisper: "local" uses faster-whisper on CPU; "groq" uses Groq Whisper API (free)
     WHISPER_BACKEND: str = "groq"
