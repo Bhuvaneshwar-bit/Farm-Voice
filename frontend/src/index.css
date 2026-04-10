@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-farm-50 text-gray-900 font-sans;
+    min-height: 100dvh;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-farm-600 hover:bg-farm-700 active:bg-farm-800
+           text-white font-semibold rounded-2xl px-6 py-4
+           transition-all duration-150 active:scale-95
+           shadow-lg shadow-farm-600/30
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-farm-50 active:bg-farm-100
+           text-farm-700 font-semibold rounded-2xl px-6 py-4
+           border-2 border-farm-200
+           transition-all duration-150 active:scale-95;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-sm border border-farm-100 p-5;
+  }
+
+  .severity-dot {
+    @apply w-4 h-4 rounded-full;
+  }
+}
+
+/* Wave animation bars for recording */
+.wave-bar {
+  display: inline-block;
+  width: 4px;
+  border-radius: 2px;
+  background: currentColor;
+  animation: wave 1.2s ease-in-out infinite;
+}
+.wave-bar:nth-child(2) { animation-delay: 0.15s; }
+.wave-bar:nth-child(3) { animation-delay: 0.3s; }
+.wave-bar:nth-child(4) { animation-delay: 0.45s; }
+.wave-bar:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes wave {
+  0%, 100% { height: 8px; }
+  50% { height: 28px; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-farm-200 rounded-full; }
